@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <md:EntityDescriptor entityID="faas" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata">
+    <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:Extensions>
+      <idpdisco:DiscoveryResponse xmlns:idpdisco="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Binding="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" Location="https://sp.authentication.com:8443/faas/login/auth/alias/faas?disco=true"/>
+    </md:Extensions>
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIICQDCCAamgAwIBAgIEB6dmeTANBgkqhkiG9w0BAQsFADBTMQswCQYDVQQGEwI5
+MTELMAkGA1UECBMCdG4xCzAJBgNVBAcTAmNiMQwwCgYDVQQKEwNvcmcxDTALBgNV
+BAsTBGZhYXMxDTALBgNVBAMTBGZhYXMwHhcNMTYxMTAyMDgwNjMxWhcNMTcwMTMx
+MDgwNjMxWjBTMQswCQYDVQQGEwI5MTELMAkGA1UECBMCdG4xCzAJBgNVBAcTAmNi
+MQwwCgYDVQQKEwNvcmcxDTALBgNVBAsTBGZhYXMxDTALBgNVBAMTBGZhYXMwgZ8w
+DQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAImPSgrxSgVbFuJNDqAQ03yztPfRk/Fb
+P4iM8F5Kyn4PA9hETrHakBi9C6hhxTQHai0zav95RyEQ5ZH8kk8VN1ZW+51nHLZ+
+rlUchjCRW+fZK1iLwuHNzuj0UCiLbEiiGeNJK2OXYllXFrtaHfcdh0oyCmYCIRQ7
+25VHZF9EMpdBAgMBAAGjITAfMB0GA1UdDgQWBBSKyT4dz4IK+tK0utxQEyqEWidJ
+JTANBgkqhkiG9w0BAQsFAAOBgQBUolMIBCWtqEEeSmv3AlDkqd+7yv0PW96aQYJx
+UsSxgXbTujz/BP6eSvvyaZnPvsaHWqW+sUMCujdXAVsqcZeOk9g7fr6DwzBsML/J
+Ys9GaLkiHQmm4+eKInGiehsI+EePJxkOTt+enNDuWLkTQRkkpfNn9xWPnw0yaZic
+MaAECw==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://sp.authentication.com:8443/faas/saml/SingleLogout/alias/faas"/>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://sp.authentication.com:8443/faas/saml/SingleLogout/alias/faas"/>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://sp.authentication.com:8443/faas/saml/SingleLogout/alias/faas"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://sp.authentication.com:8443/faas/saml/SSO/alias/faas" index="0" isDefault="true"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://sp.authentication.com:8443/faas/saml/SSO/alias/faas" index="1" isDefault="false"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="https://sp.authentication.com:8443/faas/saml/SSO/alias/faas" index="2" isDefault="false"/>
+  </md:SPSSODescriptor>
+</md:EntityDescriptor>
